@@ -1,0 +1,312 @@
+/* General styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.navbar {
+  width: 80%; /* Adjust width to cover the rest of the screen */
+  margin-left: 20%; /* Ensure it starts after the sidebar */
+  background-color: #fff; /* Optional: Background color */
+  border-bottom: 1px solid #ccc; /* Optional: Bottom border */
+  height: 55px;
+}
+
+/* Navbar logo for mobile view */
+.navbar-logo {
+  display: none; /* Hidden by default */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 25px; /* Adjust height as needed */
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 20%;
+  height: 100%;
+  background-color: #ffffff; /* Optional: Adjust the background color */
+  overflow-y: auto;
+  padding-top: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-right: 1px solid #ccc;
+}
+
+.search-div{
+  padding-top: 30px;
+}
+
+.channels{
+  padding-top: 15px;
+}
+
+.library{
+  padding-top: 5px;
+}
+
+.playlist{
+  padding-top: 5px;
+} 
+
+.sidebar a {
+  text-decoration: none;
+  color: #000000; /* Optional: Adjust the font color */
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.sidebar .active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5px;
+  right: -5px;
+  top: -5px;
+  bottom: -5px;
+  background-color: #e8e8e8;
+  border: 5px solid #e8e8e8;
+  border-radius: 6px;
+  z-index: -1;
+}
+
+.sidebar .material-symbols-outlined {
+  margin-right: 8px; /* Optional: Adjust the spacing between icon and text */
+}
+
+.sidebar span{
+  color: red;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+.library p, .playlist p{
+  font-size: 12px;
+}
+
+.music-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between buttons */
+  margin-left: 70px;
+}
+
+.music-control-button {
+  padding: 0;
+  border: none; /* Remove border */
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px; /* Vertically center the text */
+  display: inline-block;
+  font-size: 16px; /* Adjust the font size as needed */
+  background-color: transparent; /* Ensure button background is transparent */
+  color: #ccc; /* Set button color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Different sizes for buttons */
+.music-control-button.small .material-symbols-outlined {
+  font-size: 15px; /* Smaller font size */
+}
+
+.music-control-button.medium .material-symbols-outlined {
+  font-size: 25px; /* Medium font size */
+}
+
+.music-control-button.large .material-symbols-outlined {
+  font-size: 35px; /* Larger font size */
+}
+
+.nav-center-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 80%; /* Height of the navbar */
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 10%;
+  border: 1px solid #ccc;
+}
+
+.grey-div {
+  position: absolute;
+  left: 0;
+  width: 40px;
+  height: 100%;
+  background-color: #e8e8e8;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  height: 25px; /* Adjust the logo height as needed */
+}
+
+/* Right container with extra button */
+.nav-right-container {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Pushes the container to the right */
+}
+
+/* Extra button styling */
+.extra-button {
+  border: none;
+  font-size: 12px; /* Adjust icon size as needed */
+  cursor: pointer;
+}
+
+.home {
+  margin-left: 20%; /* Occupy the remaining 70% of the screen */
+  margin-top: 60px;
+  width: 80%;
+  padding: 20px; /* Optional: Adjust padding as needed */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.line{
+  height: 1px;
+  width: 100%;
+  background-color: #ccc;
+}
+
+/* Container styles */
+.cards-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+  padding: 10px 0;
+  white-space: nowrap;
+  scroll-behavior: smooth; /* Smooth scroll behavior */
+}
+
+/* Card styles */
+.card {
+  flex: 0 0 25%; /* Each card takes up one-fourth of the container width */
+  margin-right: 10px; /* Space between cards */
+  background-color: #f3f3f3;
+  border-radius: 8px;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+  /* Optional box-shadow for a more realistic card effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Card image styles */
+.card-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Card body styles */
+.card-body {
+  color: white;
+  padding: 10px;
+  border-radius: 0 0 8px 8px;
+}
+
+/* Hide the scrollbar */
+.cards-container::-webkit-scrollbar {
+  display: none;
+}
+.album-name, .artist-name, .album-year {
+  margin: 2px 0; /* Decrease vertical margin between text elements */
+  /* You can also adjust the line-height if needed */
+  line-height: 1.2; /* Optional: Adjust line-height for spacing */
+}
+
+.album-name{
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.artist-name, .album-year{
+  font-size: 14px;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .sidebar {
+      width: 25%;
+  }
+}
+
+@media (max-width: 992px) {
+  .sidebar {
+      width: 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+      visibility: hidden;
+  }
+
+  .nav-center-container{
+    visibility: hidden;
+  }
+
+  .navbar-logo{
+    display: block;
+  }
+
+  .navbar-logo img{
+    height: 18px;
+  }
+
+  .music-controls{
+    visibility: hidden;
+  }
+  
+  .navbar{
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  .home{
+    width: 100%;
+    margin-left: 10px;
+  }
+
+  /* Card styles */
+  .card {
+    flex: 0 0 75%; /* Each card takes up one-fourth of the container width */
+    margin-right: 10px; /* Space between cards */
+    background-color: #f3f3f3;
+    border-radius: 8px;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+    /* Optional box-shadow for a more realistic card effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .container {
+      padding: 10px 0;
+  }
+}
